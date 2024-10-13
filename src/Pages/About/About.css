@@ -1,0 +1,131 @@
+.about-us-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9; /* Light background */
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #4caf50; /* Main title color */
+}
+
+.about-us-description {
+  font-size: 1.2rem;
+  color: #666; /* Dark grey */
+  margin-bottom: 2rem;
+}
+
+.about-us-section {
+  margin: 3rem 0;
+  padding: 2rem;
+  background-color: #fff; /* White background for sections */
+  border-radius: 8px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #4caf50; /* Section titles in green */
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: #7f8c8d; /* Grey for section descriptions */
+}
+
+.about-us-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.feature-card {
+  background-color: #ecf0f1; /* Light grey for feature cards */
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  flex: 1 1 220px; /* Responsive width */
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  color: #4caf50; /* Feature titles in green */
+  margin-bottom: 0.5rem;
+}
+
+.feature-description {
+  color: #555; /* Grey for feature descriptions */
+  font-size: 1rem;
+}
+
+.address-title {
+  font-size: 1.5rem;
+  color: #4caf50; /* Address title in green */
+  margin-bottom: 1rem;
+}
+
+.address-details {
+  font-size: 1rem;
+  color: #666; /* Dark grey for address details */
+}
+
+.about-us-subscribe {
+  background-color: #4caf50; /* Green for subscribe section */
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.subscribe-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.subscribe-description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.subscribe-button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: white; /* White background for button */
+  color: #4caf50; /* Button text in green */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.subscribe-button:hover {
+  background-color: #f0f0f0; /* Light grey on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .about-us-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .feature-card {
+    flex: 1 1 100%; /* Full width on smaller screens */
+  }
+}

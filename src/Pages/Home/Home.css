@@ -1,0 +1,341 @@
+.hero-section {
+  background: linear-gradient(
+      rgba(248, 223, 173, 0.1),
+      rgba(248, 223, 173, 0.1)
+    ),
+    url("/images/Hero/Background/banner.jpg");
+  height: 645px;
+  width: 100%;
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.slider {
+  grid-column: 3;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 10%;
+}
+
+.slider img {
+  width: 100%; /* Responsive image */
+  height: 100%; /* Maintain aspect ratio */
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.slider-button {
+  background-color: #679d06;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  color: white;
+}
+
+.slider-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: #679d06;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12-column grid */
+  gap: 20px; /* Space between cards */
+  margin-top: 100px;
+  padding: 80px;
+}
+
+/* Style for FeaturesCard instances in Home component */
+.features-container > .features-card {
+  grid-column: span 3; /* Each card spans 3 columns */
+}
+
+#rotatingImage {
+  animation: rotate 25s linear infinite; /* Change 10s to adjust the speed */
+  width: 80%;
+  height: 80%;
+  position: relative;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+#rotate-logo {
+  position: absolute;
+  top: 49%;
+  width: 18%;
+  left: 42%;
+}
+
+#spin-container {
+  position: relative;
+  text-align: center;
+  display: block;
+  margin-top: 50px;
+  background-color: #f4f6f8;
+}
+#spin-container h1 {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  font-size: 50px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700; /* Optional: Adjust font weight for emphasis */
+  color: #333; /* Optional: Adjust font color */
+  text-align: center; /* Optional: Align text to center */
+  color: #375207;
+}
+
+#spin-container h5 {
+  font-size: 20px; /* Adjust as needed */
+  color: #666; /* Adjust color for contrast */
+  font-family: "Roboto", sans-serif; /* Use the same font family as the header for consistency */
+  font-weight: 400; /* Use a lighter font weight for subheaders */
+  text-align: center; /* Optional: Align text to center */
+  margin-top: 10px; /* Optional: Add some space above the subheader */
+  color: #375207;
+}
+
+/* Default for larger screens */
+.cartoon-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-content: center;
+  gap: 40px;
+  padding: 10rem;
+}
+
+.cartoon-card {
+  grid-column: span 4;
+  position: relative;
+}
+
+.cartoon-card .cartoon-img {
+  width: 100%;
+  border-radius: 15px;
+  z-index: 0;
+  position: relative;
+}
+
+.cartoon-card .cartoon-card-content {
+  width: 60%;
+  background-color: #d1242a;
+  border-radius: 10px;
+  margin: auto;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: absolute;
+  bottom: -19%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.cartoon-card .cartoon-card-content h5 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.cartoon-card .cartoon-card-content p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: calc(1.3rem + 0.6vw);
+  color: #45595b;
+}
+
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+  .slider {
+    grid-column: 4;
+    width: 90%;
+    justify-self: end;
+  }
+
+  .features-container {
+    grid-template-columns: repeat(6, 1fr);
+    padding: 30px;
+  }
+  .features-container > .features-card {
+    grid-column: span 3; /* Each card spans 3 columns */
+  }
+  .cartoon-container {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10rem;
+  }
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  /* For tablets */
+  .slider {
+    grid-column: 1 / -1; /* Occupy the full width */
+    width: 90%; /* 90% width on tablets */
+    height: 100%;
+    margin: auto;
+    right: 0;
+  }
+  .features-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px;
+  }
+  .features-container > .features-card {
+    grid-column: span 3; /* Each card spans 3 columns */
+  }
+  #spin-container {
+    width: 100%;
+    height: 100%;
+  }
+  #rotatingImage {
+    width: 120%;
+    height: 120%;
+    left: -10%;
+  }
+  #rotate-logo {
+    top: 52%;
+    width: 33%;
+    left: 35%;
+  }
+}
+@media (max-width: 505px) {
+  #rotate-logo {
+    top: 59%;
+    width: 33%;
+    left: 35%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* For mobile devices */
+  .slider {
+    width: 90%; /* 90% width on mobile */
+    height: 100%;
+    margin: auto;
+    right: 0;
+  }
+  .features-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px;
+  }
+  .features-container > .features-card {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 384px) {
+  #rotate-logo {
+    top: 62%;
+  }
+}
+
+@media (max-width: 344px) {
+  #rotate-logo {
+    top: 68%;
+  }
+}
+
+@media (max-width: 296px) {
+  #rotate-logo {
+    top: 71%;
+  }
+}
+
+@media (max-width: 279px) {
+  #rotate-logo {
+    top: 73%;
+  }
+}
+
+/* Responsive behavior for medium screens (tablets) */
+@media (max-width: 1024px) {
+  .cartoon-container {
+    grid-template-columns: repeat(6, 1fr);
+    padding: 5rem;
+    gap: 20px;
+  }
+
+  .cartoon-card {
+    grid-column: span 6; /* Adjust width of each card */
+  }
+
+  .cartoon-card .cartoon-card-content {
+    width: 70%; /* Slightly larger content for tablets */
+  }
+}
+
+/* Responsive behavior for smaller screens (mobile) */
+@media (max-width: 768px) {
+  .cartoon-container {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem;
+    gap: 100px;
+  }
+
+  .cartoon-card {
+    grid-column: span 4;
+  }
+
+  .cartoon-card .cartoon-card-content {
+    width: 80%; /* Larger content for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .cartoon-container {
+    grid-template-columns: 1fr; /* One column layout for mobile */
+    padding: 2rem;
+    gap: 50px;
+  }
+
+  .cartoon-card {
+    grid-column: span 1;
+  }
+
+  .cartoon-card .cartoon-img {
+    width: 100%;
+  }
+
+  .cartoon-card .cartoon-card-content {
+    width: 90%; /* Maximize content width on mobile */
+    bottom: -10%;
+  }
+}

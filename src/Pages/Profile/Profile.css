@@ -1,0 +1,129 @@
+/* Full-width responsive profile container */
+.profile-container {
+  width: 100%;
+  padding: 50px;
+  background-color: #f0f4f8;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+}
+
+/* Profile form wrapper */
+.profile-form-wrapper {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading style */
+.profile-form-wrapper h1 {
+  font-size: 3rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Form layout using grid */
+.profile-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Form input and label styling */
+.profile-form label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #444;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.profile-form input,
+.profile-form select {
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.profile-form input:focus,
+.profile-form select:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Full-width for certain form fields */
+.profile-form input[type="email"],
+.profile-form input[type="tel"] {
+  grid-column: 1 / -1;
+}
+
+/* Submit button styling */
+.submit-btn {
+  padding: 15px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  grid-column: 1 / -1; /* Full-width button */
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .profile-form {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+
+  .profile-form-wrapper {
+    padding: 20px;
+  }
+
+  .profile-form-wrapper h1 {
+    font-size: 2.5rem;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-form-wrapper h1 {
+    font-size: 2rem;
+  }
+
+  .profile-form-wrapper {
+    padding: 15px;
+  }
+
+  .profile-form input,
+  .profile-form select {
+    padding: 12px;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}

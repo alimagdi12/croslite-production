@@ -1,0 +1,53 @@
+.cartoon-card {
+  grid-column: span 4;
+  position: relative;
+}
+
+.cartoon-card .cartoon-img {
+  width: 100%;
+  border-radius: 15px;
+  z-index: 0;
+  position: relative;
+}
+
+.cartoon-card .cartoon-card-content {
+  width: 60%;
+  background-color: #d1242a;
+  border-radius: 10px;
+  margin: auto;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  position: absolute; /* Make the content position above the image */
+  bottom: -19%; /* Adjust the position */
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the content horizontally and vertically */
+  z-index: 1; /* Ensure the content is above the image */
+}
+
+.cartoon-card .cartoon-card-content h5 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.cartoon-card .cartoon-card-content p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: calc(1.3rem + 0.6vw);
+  color: #45595b;
+}

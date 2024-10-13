@@ -1,0 +1,117 @@
+.product-card {
+  position: relative;
+  background-color: #ffffff; /* Keep a clean white background for elegance */
+  border-radius: 20px; /* Rounder corners for a softer look */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Increased padding for spaciousness */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif; /* Elegant font choice */
+}
+
+.product-card:hover {
+  transform: translateY(-10px); /* Gentle lift on hover */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 20px; /* Matching border radius of the card */
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.product-details {
+  margin-top: 20px; /* Ample space above details */
+}
+
+.product-name {
+  font-size: 1.5rem; /* Slightly larger for emphasis */
+  font-weight: 600; /* Use semi-bold for a refined appearance */
+  color: #333;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.product-card:hover .product-name {
+  color: #4caf50; /* A rich green for a touch of freshness */
+}
+
+.button-container {
+  display: flex; /* Use flexbox for button alignment */
+  justify-content: center; /* Center align the buttons */
+  gap: 5px; /* More space between buttons */
+}
+
+.product-details-button {
+  background-color: #ffffff; /* White background for a clean look */
+  color: #4caf50; /* Matching the hover color of the product name */
+  border: 2px solid #4caf50; /* Green border for sophistication */
+  padding: 12px 24px; /* More padding for a balanced button */
+  border-radius: 10px; /* Slightly rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  font-weight: 500; /* Regular weight for balance */
+  font-size: 1.1rem; /* Slightly larger font size for better readability */
+}
+
+.product-details-button:hover {
+  background-color: #4caf50; /* Green background on hover */
+  color: white; /* White text on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+.add-to-cart-button {
+  display: flex; /* Use flexbox for better alignment */
+  align-items: center; /* Center the icon and text vertically */
+  justify-content: center; /* Center the text */
+  background-color: #7e7e7e; /* Use a fresh green color */
+  color: white;
+  padding: 12px 20px; /* Balanced padding */
+  border: none; /* No border for a sleek appearance */
+  border-radius: 10px; /* Slightly rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 500; /* Regular weight for balance */
+  font-size: 1.1rem; /* Consistent font size */
+  width: auto; /* Allow automatic width based on content */
+}
+
+.add-to-cart-button svg {
+  margin-left: 8px; /* Space between text and icon */
+  font-size: 1.2rem; /* Adjust icon size */
+}
+
+.add-to-cart-button:hover {
+  background-color: #fff; /* A darker shade of green on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+  color: #333; /* Keep text white on hover */
+}
+
+.product-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px; /* Moved to the top right corner for a more balanced look */
+  background-color: #ff5722;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 25px; /* More rounded for a softer look */
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .product-card {
+    max-width: 400px; /* Slightly increased max width for larger screens */
+  }
+  .button-container {
+    flex-direction: row; /* Keep buttons in a row for larger screens */
+  }
+}

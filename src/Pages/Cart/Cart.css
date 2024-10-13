@@ -1,0 +1,139 @@
+/* Cart page container */
+.cart-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+/* Page title */
+.cart-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Cart items list */
+.cart-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Individual cart item */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item:hover {
+  background-color: #f9f9f9;
+}
+
+/* Cart item image */
+.cart-item-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Cart item info */
+.cart-item-info {
+  flex-grow: 1;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-info h2 {
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #444;
+}
+
+.cart-item-info p {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Price styling */
+.cart-item-info .price {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Remove button */
+.remove-btn {
+  padding: 10px 15px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: #ff3333;
+}
+
+/* Media Queries */
+
+/* On tablets, make the cart item stack vertically */
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .cart-item-info {
+    margin-left: 0;
+    align-items: flex-start;
+  }
+}
+
+/* On mobile, make sure everything stays clean and readable */
+@media (max-width: 480px) {
+  .cart-container {
+    padding: 10px;
+  }
+
+  .cart-container h1 {
+    font-size: 2rem;
+  }
+
+  .remove-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .cart-item-info h2 {
+    font-size: 1.1rem;
+  }
+
+  .cart-item-info p {
+    font-size: 0.9rem;
+  }
+
+  .cart-item-info .price {
+    font-size: 1rem;
+  }
+}
