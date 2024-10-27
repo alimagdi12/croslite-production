@@ -1,14 +1,15 @@
 import React from "react";
 import "./HomeCard.css";
-function HomeCard({product}) {
+import { useNavigate } from "react-router-dom";
+function HomeCard({ product }) {
+  const navigate = useNavigate();
+  function getDetails() {
+    navigate(`/product/${product._id}`);
+  }
   return (
-    <li>
+    <li onClick={getDetails}>
       <a href="" className="card">
-        <img
-          src={product.imageUrl.images[0]}
-          className="card__image"
-          alt=""
-        />
+        <img src={product.imageUrl.images[0]} className="card__image" alt="" />
         <div className="card__overlay">
           <div className="card__header">
             <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
@@ -24,9 +25,7 @@ function HomeCard({product}) {
             </div>
           </div>
           <p className="card__description">
-            <span className="card__tagline">
-              Lorem ipsum dolor sit amet consectetur
-            </span>{" "}
+            <span className="card__tagline">{product.description}</span>{" "}
           </p>
         </div>
       </a>

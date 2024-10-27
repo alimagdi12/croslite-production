@@ -89,6 +89,30 @@
   background-color: #ff3333;
 }
 
+/* Order Button */
+.order-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Full width on mobile */
+  max-width: 300px; /* Limit the width on larger screens */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.order-btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsive: Make the button full-width on smaller devices */
+
 /* Media Queries */
 
 /* On tablets, make the cart item stack vertically */
@@ -107,6 +131,9 @@
   .cart-item-info {
     margin-left: 0;
     align-items: flex-start;
+  }
+  .order-btn {
+    width: 100%;
   }
 }
 

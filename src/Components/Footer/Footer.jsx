@@ -22,7 +22,11 @@ function Footer() {
             className="footer-logo"
           />
           <div className="footer-subscribe">
-            <input type="email" placeholder="Your Email" />
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="footer-input"
+            />
             <button>{t("SubscribeNow")}</button>
           </div>
           <div className="footer-icons">

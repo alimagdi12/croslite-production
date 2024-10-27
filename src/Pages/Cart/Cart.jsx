@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Cart.css";
-import removeFromCart from "./../../services/RemoveFromCart/RemoveFromCart";
+import removeFromCart from "../../services/RemoveFromCart/RemoveFromCart.js";
 import { toast } from "react-toastify";
+import Order from "../../services/Orders/Order"; // Import the Order service
 import "react-toastify/dist/ReactToastify.css";
 
 const Cart = () => {
@@ -28,7 +29,6 @@ const Cart = () => {
             token: token, // Manually sending it in Cookie
           },
         });
-        console.log(response);
 
         setCartItems(response.data.cartItems);
       } catch (err) {
@@ -49,6 +49,16 @@ const Cart = () => {
       setCartItems(cartItems.filter((item) => item.productId !== productId));
     } else {
       toast.error("Error removing product from cart.");
+    }
+  }
+
+  // Handle Order Request
+  async function handleOrderFunc() {
+    const res = await Order();
+    if (res) {
+      toast.success("order made successfully , please check your mail");
+    } else {
+      toast.error("Error making order, please try again later");
     }
   }
 
@@ -77,7 +87,7 @@ const Cart = () => {
               </div>
               <button
                 className="remove-btn"
-                onClick={() => handleRemoveFromCart(item.productId)} // Pass function reference
+                onClick={() => handleRemoveFromCart(item.productId)}
               >
                 Remove
               </button>
@@ -85,6 +95,10 @@ const Cart = () => {
           ))}
         </div>
       )}
+
+      <button className="order-btn" onClick={handleOrderFunc}>
+        Place Order
+      </button>
     </div>
   );
 };

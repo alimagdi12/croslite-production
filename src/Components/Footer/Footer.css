@@ -24,13 +24,13 @@ footer {
   align-items: center;
 }
 
-.footer-subscribe input {
+.footer-subscribe .footer-input {
   padding: 10px;
   border: none;
   border-radius: 50px 0 0 50px;
   outline: none;
   min-width: 350px;
-  height: 50px;
+  height: 30px;
   -webkit-border-radius: 50px 0 0 50px;
   -moz-border-radius: 50px 0 0 50px;
   -ms-border-radius: 50px 0 0 50px;
