@@ -37,7 +37,6 @@ const ProductCard = ({ product }) => {
       <ImageLoader src={product.imageUrl.images[0]} alt={productName} />
       <div className="product-details">
         <h3 className="product-name">{productName}</h3>{" "}
-        {/* Render correct title */}
         <div className="button-container">
           <button className="product-details-button" onClick={details}>
             {t("Details")}

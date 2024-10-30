@@ -7,7 +7,6 @@ const colorMap = {
 };
 
 function CartoonCard({ image }) {
-  console.log(image);
 
   const backgroundColor = colorMap[image] || "#fff"; // Fallback to white if no match
 
