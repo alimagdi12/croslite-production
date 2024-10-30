@@ -9,7 +9,7 @@ const Order = async () => {
     }
 
     const response = await axios.post(
-      "http://127.0.0.1:3000/create-order",
+      "http://127.0.0.1:3001/create-order",
       {},
       {
         headers: { token },
