@@ -19,13 +19,13 @@ const KidsProducts = () => {
       rating: 4,
     },
     {
-      id: 2,
+      id: 3,
       name: "Spidey Babuchi",
       image: "/images/disney/batman2.JPG",
       rating: 4,
     },
     {
-      id: 2,
+      id: 4,
       name: "Spidey Babuchi",
       image: "/images/disney/spiderman.JPG",
       rating: 4,
@@ -40,7 +40,7 @@ const KidsProducts = () => {
   };
 
   return (
-    <div className="products-container">
+    <div className="kids-products-container">
       <h2>{t("KidsProducts")}</h2>
       <div className="product-grid">
         {products.map((product) => (

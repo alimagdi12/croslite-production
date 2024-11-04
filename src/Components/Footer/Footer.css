@@ -131,6 +131,7 @@ footer hr {
   margin-top: 20px;
 }
 
+/* Mobile styling adjustments */
 @media (max-width: 768px) {
   .footer-top {
     flex-direction: column;
@@ -143,11 +144,15 @@ footer hr {
     align-items: center;
   }
 
-  .footer-subscribe input,
-  .footer-subscribe button {
-    border-radius: 50px;
+  .footer-subscribe .footer-input {
+    border-radius: 50px; /* Adjusted radius for single rounded input */
     width: 100%;
-    margin: 5px 0;
+    margin-bottom: 10px; /* Added space between input and button */
+  }
+
+  .footer-subscribe button {
+    border-radius: 50px; /* Consistent radius */
+    width: 100%;
   }
 
   .footer-icons {

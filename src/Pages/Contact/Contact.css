@@ -31,7 +31,6 @@
   margin-bottom: 30px;
 }
 
-/* Form and Contact Details Side by Side */
 .form-details-section {
   display: flex;
   gap: 40px;
@@ -107,11 +106,21 @@
 @media (max-width: 768px) {
   .form-details-section {
     flex-direction: column;
+
   }
 
   .contact-form,
   .contact-info {
     flex: unset;
     width: 100%;
+
+  }
+  .contact-form{
+    width: 90%;
+
+  }
+  .contact-form button{
+    text-align: center;
+    margin-left: 30px;
   }
 }

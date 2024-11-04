@@ -46,9 +46,7 @@ const Contact = () => {
           ></iframe>
         </div>
 
-        {/* Form and Contact Details Section */}
         <div className="form-details-section">
-          {/* Contact Form */}
           <form className="contact-form" onSubmit={handleSubmit}>
             <input
               type="text"

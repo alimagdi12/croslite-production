@@ -2,6 +2,7 @@
   display: flex;
   height: 90vh;
   font-family: Arial, sans-serif;
+
 }
 
 .signup-left {
@@ -40,6 +41,7 @@
   justify-content: center;
   align-items: center;
   background-color: white;
+  margin-top: 20px;
 }
 
 .signup-form {
@@ -98,7 +100,8 @@
 @media (max-width: 768px) {
   .signup-container {
     flex-direction: column;
-    margin-bottom: 250px;
+    margin-bottom: 500px;
+    margin-top: 50px;
   }
 
   .signup-left {

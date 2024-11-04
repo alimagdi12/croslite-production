@@ -10,7 +10,8 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
-import { useLogin } from "../../Context/Login/LoginContext"; // Import the login context
+import { useLogin } from "../../Context/Login/LoginContext";
+
 function Navbar() {
   const { t, i18n } = useTranslation(); // Initialize translation
   const { isLoggedIn, logout } = useLogin(); // Use the login context
@@ -44,14 +45,12 @@ function Navbar() {
             <li>
               <Link to="/about">{t("About")}</Link>
             </li>
-            {isLoggedIn ? ( // Check if the user is logged in
-              <>
-                <li>
-                  <Link onClick={logout} to="/login">
-                    {t("Logout")}
-                  </Link>
-                </li>
-              </>
+            {isLoggedIn ? (
+              <li>
+                <Link onClick={logout} to="/login">
+                  {t("Logout")}
+                </Link>
+              </li>
             ) : (
               <li>
                 <Link to="/login">{t("Login")}</Link>
@@ -73,9 +72,8 @@ function Navbar() {
             <FontAwesomeIcon icon={faUser} />
           </Link>
           <FontAwesomeIcon icon={faBars} onClick={toggleSidebar} />
-
           <button className="language-toggle" onClick={changeLanguage}>
-            {i18n.language === "ar" ? "EN" : "AR"} {/* Display language */}
+            {i18n.language === "ar" ? "EN" : "AR"}
           </button>
         </div>
 
@@ -98,7 +96,7 @@ function Navbar() {
             <li>
               <Link to="/about">{t("About")}</Link>
             </li>
-            {isLoggedIn ? ( // Check if the user is logged in
+            {isLoggedIn ? (
               <li>
                 <Link onClick={logout} to="/login">
                   {t("Logout")}
@@ -117,10 +115,14 @@ function Navbar() {
           </ul>
           <div className="nav-icon">
             <FontAwesomeIcon icon={faSearch} />
-            <FontAwesomeIcon icon={faBagShopping} />
-            <FontAwesomeIcon icon={faUser} />
+            <Link to="/cart">
+              <FontAwesomeIcon icon={faBagShopping} />
+            </Link>
+            <Link to="/profile">
+              <FontAwesomeIcon icon={faUser} />
+            </Link>
             <button className="language-toggle-mobile" onClick={changeLanguage}>
-              {i18n.language === "ar" ? "EN" : "AR"} {/* Display language */}
+              {i18n.language === "ar" ? "EN" : "AR"}
             </button>
           </div>
         </div>

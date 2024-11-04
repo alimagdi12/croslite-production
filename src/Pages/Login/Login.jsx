@@ -83,7 +83,6 @@ const Login = () => {
             alt="Croslite Logo"
             className="login-logo"
           />
-          <h3>{t("LoginText")}</h3>
           <form onSubmit={handleSubmit} className="login-form">
             <div className="form-group">
               <input
