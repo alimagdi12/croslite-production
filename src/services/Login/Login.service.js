@@ -2,7 +2,7 @@ import axios from "axios";
 
 const LoginService = async (formData) => {
   try {
-    const res = await axios.post("https://api.croslite.com.eg:3001//login", formData);
+    const res = await axios.post("https://api.croslite.com.eg:3001/login", formData);
 
     if (res.status === 200) {
       localStorage.setItem("token", res.data.token); // Assuming the token is sent in the response body as { token: '...' }

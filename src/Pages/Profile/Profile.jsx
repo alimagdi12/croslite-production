@@ -26,7 +26,7 @@ const Profile = () => {
           throw new Error("No token found in localStorage.");
         }
 
-        const response = await axios.get("https://api.croslite.com.eg:3001//get-user", {
+        const response = await axios.get("https://api.croslite.com.eg:3001/get-user", {
           headers: {
             Authorization: `Bearer ${token}`,
             token: token,
@@ -58,7 +58,7 @@ const Profile = () => {
       const token = localStorage.getItem("token");
 
       const response = await axios.post(
-        "https://api.croslite.com.eg:3001//update-user",
+        "https://api.croslite.com.eg:3001/update-user",
         userData,
         {
           headers: {

@@ -9,7 +9,7 @@ const Order = async () => {
     }
 
     const response = await axios.post(
-      "https://api.croslite.com.eg:3001//create-order",
+      "https://api.croslite.com.eg:3001/create-order",
       {},
       {
         headers: { token },
