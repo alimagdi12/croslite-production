@@ -1,7 +1,7 @@
 import axios from "axios";
 const getProducts = async (setProducts, setLoading) => {
   try {
-    const res = await axios.get("http://127.0.0.1:3001/products");
+    const res = await axios.get("https://api.croslite.com.eg/products");
     setProducts(res.data.products); // Access the products array
     console.log(res.data.products); // Log the products to verify
   } catch (error) {
@@ -12,3 +12,4 @@ const getProducts = async (setProducts, setLoading) => {
 };
 
 export default  getProducts;
+
