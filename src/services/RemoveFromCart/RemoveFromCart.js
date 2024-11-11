@@ -9,7 +9,7 @@ const removeFromCart = async (productId) => {
     }
 
     const response = await axios.post(
-      "http://127.0.0.1:3001/cart-delete-item",
+      "https://api.croslite.com.eg:3001/cart-delete-item",
       { productId },
       {
         headers: {

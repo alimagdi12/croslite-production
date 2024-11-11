@@ -10,7 +10,7 @@ const addToCart = async (productId) => {
 
     // Send POST request with the productId, token in Authorization header, and Cookie
     const response = await axios.post(
-      "http://127.0.0.1:3001/cart",
+      "https://api.croslite.com.eg:3001/cart",
       { productId },
       {
         headers: {
