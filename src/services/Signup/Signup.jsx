@@ -3,7 +3,7 @@ import axios from "axios";
 class SignupService {
   static async signup(userData) {
     try {
-      const response = await axios.post("http://127.0.0.1:3001/signup", userData); // Added http://
+      const response = await axios.post("https://api.croslite.com.eg:3001//signup", userData); // Added http://
       return response.data;
     } catch (error) {
       if (error.response) {

@@ -23,7 +23,7 @@ const Cart = () => {
         }
 
         // Send token in headers (Authorization) as bearer token
-        const response = await axios.get("http://127.0.0.1:3001/cart", {
+        const response = await axios.get("http://https://api.croslite.com.eg:3001//cart", {
           headers: {
             Authorization: `Bearer ${token}`, // Using token from localStorage
             token: token, // Manually sending it in Cookie
