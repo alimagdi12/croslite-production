@@ -51,7 +51,7 @@ const Contact = () => {
             <input
               type="text"
               name="name"
-              placeholder="Your Name"
+              placeholder={t("YourName")}
               value={formData.name}
               onChange={handleChange}
               required
@@ -59,14 +59,14 @@ const Contact = () => {
             <input
               type="email"
               name="email"
-              placeholder="Enter Your Email"
+              placeholder={t("YourEmail")}
               value={formData.email}
               onChange={handleChange}
               required
             />
             <textarea
               name="message"
-              placeholder="Your Message"
+              placeholder={t("YourMessage")}
               value={formData.message}
               onChange={handleChange}
               required
@@ -82,7 +82,7 @@ const Contact = () => {
 
             <div className="info-section">
               <h3>{t("MailUs")}</h3>
-              <p>info@croslite.com.eg</p>
+              <p> customersupport@croslite.com.eg</p>
             </div>
 
             <div className="info-section">

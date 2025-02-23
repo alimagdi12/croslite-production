@@ -74,7 +74,7 @@ const Signup = () => {
         />
         <div className="signup-text">
           <h2>{t("SignUpText")}</h2>
-          <p>While seats are available!</p>
+          {/* <p>While seats are available!</p> */}
         </div>
       </div>
 

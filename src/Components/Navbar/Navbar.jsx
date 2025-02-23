@@ -11,24 +11,33 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import { useLogin } from "../../Context/Login/LoginContext";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const { t, i18n } = useTranslation(); // Initialize translation
   const { isLoggedIn, logout } = useLogin(); // Use the login context
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const navigate = useNavigate();
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+  const navigateHome = () => {
+    navigate("/");
+  };
   const changeLanguage = () => {
     const newLang = i18n.language === "ar" ? "en" : "ar";
     i18n.changeLanguage(newLang);
   };
 
+  const navigateToShop = () => {
+    navigate("/shop");
+  }
+
   return (
     <>
       <nav className="navbar">
-        <div className="logo">
+        <div className="logo" onClick={navigateHome}>
           <img src="/images/logo/Nav_Logo.png" alt="Logo" className="nav-img" />
         </div>
         <div className="nav-links">
@@ -64,7 +73,8 @@ function Navbar() {
           </ul>
         </div>
         <div className="nav-icons">
-          <FontAwesomeIcon icon={faSearch} />
+          
+          <FontAwesomeIcon icon={faSearch} onClick={navigateToShop} />
           <Link to="/cart">
             <FontAwesomeIcon icon={faBagShopping} />
           </Link>

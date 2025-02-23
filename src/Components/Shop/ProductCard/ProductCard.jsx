@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { useLogin } from "../../../Context/Login/LoginContext"; // Import the login context
+import { useLogin } from "../../../Context/Login/LoginContext";
 import addToCart from "../../../services/AddToCart/AddToCart";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,10 +13,10 @@ import "react-toastify/dist/ReactToastify.css";
 const ProductCard = ({ product }) => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-  const { isLoggedIn } = useLogin(); // Use the login context
+  const { isLoggedIn } = useLogin();
 
   const productName =
-    i18n.language === "ar" ? product.arabicTitle : product.title; // Conditional title
+    i18n.language === "ar" ? product.arabicTitle : product.title;
 
   function details(e) {
     e.preventDefault();
@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
   }
 
   async function handleAddToCart() {
-    const added = await addToCart(product._id); // Use the service function
+    const added = await addToCart(product._id);
     if (added) {
       toast.success(t("Product added to cart successfully"));
     } else {
@@ -35,8 +35,21 @@ const ProductCard = ({ product }) => {
   return (
     <div className="products-card">
       <ImageLoader src={product.imageUrl.images[0]} alt={productName} />
+
+      {/* Thumbnails Container */}
+      <div className="product-thumbnails">
+        {product.imageUrl.images.slice(1).map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`${productName} - variant ${index + 1}`}
+            className="thumbnail-image"
+          />
+        ))}
+      </div>
+
       <div className="product-details">
-        <h3 className="product-name">{productName}</h3>{" "}
+        <h3 className="product-name">{productName}</h3>
         <div className="button-container">
           <button className="product-details-button" onClick={details}>
             {t("Details")}
@@ -54,4 +67,3 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
-

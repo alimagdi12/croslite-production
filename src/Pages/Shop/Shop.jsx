@@ -4,7 +4,7 @@ import ProductCard from "../../Components/Shop/ProductCard/ProductCard";
 import "./Shop.css";
 import getProducts from "../../services/products/products.service";
 import { useTranslation } from "react-i18next"; // Import useTranslation
-
+import Loader from "../../Components/Loader/Loader";
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -62,7 +62,7 @@ const Shop = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   return (

@@ -5,8 +5,9 @@ import {
   faFacebookF,
   faInstagram,
   faLinkedinIn,
-  faTwitter,
+  faTiktok,
 } from "@fortawesome/free-brands-svg-icons"; // Correct import path
+
 import { useTranslation } from "react-i18next"; // Import useTranslation
 
 function Footer() {
@@ -24,7 +25,7 @@ function Footer() {
           <div className="footer-subscribe">
             <input
               type="email"
-              placeholder="Your Email"
+              placeholder={t("YourEmail")}
               className="footer-input"
             />
             <button>{t("SubscribeNow")}</button>
@@ -39,8 +40,8 @@ function Footer() {
             <a href="/" aria-label="LinkedIn">
               <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
-            <a href="/" aria-label="Twitter">
-              <FontAwesomeIcon icon={faTwitter} />
+            <a href="/" aria-label="TikTok">
+              <FontAwesomeIcon icon={faTiktok} />
             </a>
           </div>
         </div>
@@ -71,7 +72,7 @@ function Footer() {
           <div className="footer-column">
             <h3 style={{ color: "#fff" }}>{t("Contact")}</h3>
             <p>{t("Address")}</p>
-            <p>Email: info@croslite.com.eg</p>
+            <p>Email: customersupport@croslite.com.eg</p>
             <p>Phone 1: +20 1205712221</p>
             <p>Phone 2: +20 1001557902</p>
             <p>LandLine: +20 0663759300</p>
