@@ -106,11 +106,44 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.product-thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 5px; /* Small gap between images */
+  margin-top: 10px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.thumbnail-image {
+  width: 30px; /* Small images */
+  height: 30px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.thumbnail-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
 @media (min-width: 768px) {
   .products-card {
     max-width: 400px; /* Slightly increased max width for larger screens */
   }
   .button-container {
     flex-direction: row; /* Keep buttons in a row for larger screens */
+  }
+  .product-thumbnails {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .thumbnail-image {
+    width: 25px;
+    height: 25px;
   }
 }

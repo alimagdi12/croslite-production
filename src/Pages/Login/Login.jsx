@@ -88,7 +88,7 @@ const Login = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="Please enter your email address"
+                placeholder={t("YourEmail")}
                 value={formData.email}
                 onChange={handleChange}
                 className={errors.email ? "error" : ""}
@@ -102,7 +102,7 @@ const Login = () => {
               <input
                 type="password"
                 name="password"
-                placeholder="Please enter your password"
+                placeholder={t("YourPassword")}
                 value={formData.password}
                 onChange={handleChange}
                 className={errors.password ? "error" : ""}

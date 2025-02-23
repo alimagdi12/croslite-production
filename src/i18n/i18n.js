@@ -17,10 +17,10 @@ const resources = {
         "Experience fast order fulfillment so you can enjoy your new products as quickly as possible, with minimal waiting time.",
       QualityAssurance: "Quality Assurance",
       QualityAssuranceDesc:
-        "At our products factory, we are committed to make exceptional quality in every product.We make only the highest quality.",
+        "At our factory, we are committed to make exceptional quality in every product.We make only the highest quality.",
       ProductRange: "Product Range",
       ProductRangeDesc:
-        "We offer a diverse range of comfortable products for men, women, and children. From classic products to trendy sandals",
+        "We offer a diverse range of comfortable products for men, women, and children. From classic products to trendy clogs",
       Support: "24/7 Support",
       SupportDesc:
         "Our dedicated support team is available around the clock to provide you with fast and friendly assistance.",
@@ -38,7 +38,7 @@ const resources = {
       TikTok: "TikTok",
       ReadMore: "ٌReed More",
       Address:
-        "Factory 45, 118 units project, Industrial Zone Factory, South Of  Raswa, Port Said, Egypt",
+        " Unit 45 - area 118 factory's - Industrial Zone - South Of Raswa - Port Said, Egypt",
       Details: "Details",
       AddToCart: "Add To Cart",
       Search: "Search",
@@ -85,6 +85,10 @@ const resources = {
       CustomerTestimonialsContent:
         "Customer feedback always pushes us forward to develop and progress, which is what we always strive for, and customer satisfaction is our goal and objective.",
       ContactUs: "Contact Us",
+      YourName: " Enter your name",
+      YourEmail: " Enter your email",
+      YourMessage: " Enter your message",
+      YourPassword: " Enter your password",
     },
   },
   ar: {
@@ -164,6 +168,10 @@ const resources = {
       CustomerTestimonialsContent:
         "اراء العملاء دائما ما تقوم بدفعنا للامام للتطور و التقدم و هو ما نسعي اليه دائما و رضا العملاء هو غايتنا و هدفنا .",
       ContactUs: "تواصل معنا",
+      YourName: "ادخل اسمك",
+      YourEmail: "ادخل بريدك الالكتروني",
+      YourMessage: "ادخل رسالتك",
+      YourPassword:"ادخل الرقم السري"
     },
   },
 };
