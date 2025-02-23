@@ -18,18 +18,18 @@ const KidsProducts = () => {
       image: "/images/disney/spiderman3.JPG",
       rating: 4,
     },
-    {
-      id: 3,
-      name: "Spidey Babuchi",
-      image: "/images/disney/batman2.JPG",
-      rating: 4,
-    },
-    {
-      id: 4,
-      name: "Spidey Babuchi",
-      image: "/images/disney/spiderman.JPG",
-      rating: 4,
-    },
+   // {
+     // id: 3,
+     // name: "Spidey Babuchi",
+     // image: "/images/disney/batman2.JPG",
+     // rating: 4,
+   // },
+   // {
+     // id: 4,
+     // name: "Spidey Babuchi",
+     // image: "/images/disney/spiderman.JPG",
+     // rating: 4,
+   // },
   ];
 
   function handleNavigate() {

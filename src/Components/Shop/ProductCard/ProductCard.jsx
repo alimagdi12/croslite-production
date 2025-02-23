@@ -33,7 +33,7 @@ const ProductCard = ({ product }) => {
   }
 
   return (
-    <div className="product-card">
+    <div className="products-card">
       <ImageLoader src={product.imageUrl.images[0]} alt={productName} />
       <div className="product-details">
         <h3 className="product-name">{productName}</h3>{" "}

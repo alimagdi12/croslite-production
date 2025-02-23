@@ -21,7 +21,7 @@ const SearchBar = ({ onSearch, availableColors }) => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <select
+     {/* <select
         className="search-select"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
@@ -29,7 +29,7 @@ const SearchBar = ({ onSearch, availableColors }) => {
         <option value="">Category</option>
         <option value="shoes">Shoes</option>
         <option value="sandals">Sandals</option>
-      </select>
+      </select>*/}
       <select
         className="search-select"
         value={color}

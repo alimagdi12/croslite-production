@@ -128,6 +128,7 @@ const Profile = () => {
               name="email"
               value={userData.email}
               onChange={handleChange}
+              disabled
             />
           </label>
           <label>

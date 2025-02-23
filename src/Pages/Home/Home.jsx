@@ -93,7 +93,7 @@ function Home() {
         </ul>
       </div>
 
-      <div className="container" id="spin-container">
+     {/* <div className="container" id="spin-container">
         <h1>{t("OurProductsWheel")}</h1>
         <h5>{t("PressAnywhereToFindMore")}</h5>
         <a href="/products">
@@ -105,7 +105,7 @@ function Home() {
             alt="Image 1"
           />
         </a>
-      </div>
+      </div>*/}
 
       <div className="cartoon-container">
         <div className="cartoon-card">
@@ -128,7 +128,7 @@ function Home() {
               backgroundColor: "#f58f20",
             }}
           >
-            <h5>Spidey Coco Babuchi</h5>
+            <h5>Batey Coco Babuchi</h5>
             <p>20 %</p>
           </div>
         </div>
@@ -140,7 +140,7 @@ function Home() {
               backgroundColor: "#809096",
             }}
           >
-            <h5>Spidey Coco Babuchi</h5>
+            <h5>Classic Coco Babuchi</h5>
             <p>20 %</p>
           </div>
         </div>

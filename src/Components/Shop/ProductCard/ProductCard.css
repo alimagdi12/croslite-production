@@ -1,4 +1,4 @@
-.product-card {
+.products-card {
   position: relative;
   background-color: #ffffff; /* Keep a clean white background for elegance */
   border-radius: 20px; /* Rounder corners for a softer look */
@@ -6,13 +6,12 @@
   padding: 20px; /* Increased padding for spaciousness */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
   overflow: hidden;
   cursor: pointer;
   font-family: "Montserrat", sans-serif; /* Elegant font choice */
 }
 
-.product-card:hover {
+.product-cards:hover {
   transform: translateY(-10px); /* Gentle lift on hover */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
 }
@@ -23,7 +22,7 @@
   transition: transform 0.3s ease;
 }
 
-.product-card:hover .product-image {
+.products-card:hover .product-image {
   transform: scale(1.05); /* Slight scale effect on hover */
 }
 
@@ -39,7 +38,7 @@
   transition: color 0.3s ease;
 }
 
-.product-card:hover .product-name {
+.products-card:hover .product-name {
   color: #4caf50; /* A rich green for a touch of freshness */
 }
 
@@ -108,7 +107,7 @@
 }
 
 @media (min-width: 768px) {
-  .product-card {
+  .products-card {
     max-width: 400px; /* Slightly increased max width for larger screens */
   }
   .button-container {
