@@ -6,6 +6,7 @@ import {
   faInstagram,
   faLinkedinIn,
   faTiktok,
+  faTelegram
 } from "@fortawesome/free-brands-svg-icons"; // Correct import path
 
 import { useTranslation } from "react-i18next"; // Import useTranslation
@@ -31,16 +32,16 @@ function Footer() {
             <button>{t("SubscribeNow")}</button>
           </div>
           <div className="footer-icons">
-            <a href="/" aria-label="Facebook">
+            <a href="https://www.facebook.com/share/1CQCmRKB7W/" target="_blank" aria-label="Facebook">
               <FontAwesomeIcon icon={faFacebookF} />
             </a>
-            <a href="/" aria-label="Instagram">
+            <a href="https://www.instagram.com/croslite.eg/" target="_blank" aria-label="Instagram">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href="/" aria-label="LinkedIn">
-              <FontAwesomeIcon icon={faLinkedinIn} />
+            <a href="https://t.me/cococrosliteeg" target="_blank" aria-label="Telegram">
+              <FontAwesomeIcon icon={faTelegram} />
             </a>
-            <a href="/" aria-label="TikTok">
+            <a href="https://www.tiktok.com/@crosliteeg" target="_blank" aria-label="TikTok">
               <FontAwesomeIcon icon={faTiktok} />
             </a>
           </div>
@@ -56,16 +57,16 @@ function Footer() {
             <h3 style={{ color: "#fff" }}>{t("Accounts")}</h3>
             <ul>
               <li>
-                <a href="/">{t("LinkedIn")}</a>
+                <a href="https://t.me/cococrosliteeg" target="_blank">{t("Telegram")}</a>
               </li>
               <li>
-                <a href="/">{t("Instagram")}</a>
+                <a href="https://www.instagram.com/croslite.eg/" target="_blank">{t("Instagram")}</a>
               </li>
               <li>
-                <a href="/">{t("Facebook")}</a>
+                <a href="https://www.facebook.com/share/1CQCmRKB7W/" target="_blank">{t("Facebook")}</a>
               </li>
               <li>
-                <a href="/">{t("TikTok")}</a>
+                <a href="https://www.tiktok.com/@crosliteeg" target="_blank">{t("TikTok")}</a>
               </li>
             </ul>
           </div>

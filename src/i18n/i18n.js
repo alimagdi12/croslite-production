@@ -36,6 +36,7 @@ const resources = {
       Instagram: "Instagram",
       Facebook: "Facebook",
       TikTok: "TikTok",
+      Telegram:"Telegram",
       ReadMore: "ٌReed More",
       Address:
         " Unit 45 - area 118 factory's - Industrial Zone - South Of Raswa - Port Said, Egypt",
@@ -120,6 +121,7 @@ const resources = {
       Instagram: "انستجرام",
       Facebook: "فيسبوك",
       TikTok: "تيك توك",
+      Telegram:"تليجرام",
       ReadMore: "اقرا المزيد",
       Address:
         "مصنع 45، مشروع 118 وحدة، مصنع المنطقة الصناعية، جنوب الرسوة، بورسعيد، مصر",
