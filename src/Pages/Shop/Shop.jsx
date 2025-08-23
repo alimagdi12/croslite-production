@@ -71,10 +71,13 @@ const Shop = () => {
 
       <div className="products-grid">
         {Array.isArray(currentProducts) &&
-          currentProducts.map((product) => (
-            <ProductCard key={product._id} product={product} />
-          ))}
+          currentProducts
+            .filter((product) => product.isAvailable) 
+            .map((product) => (
+              <ProductCard key={product._id} product={product} />
+            ))}
       </div>
+
 
       <div className="pagination">
         <button onClick={prevPage} disabled={currentPage === 1}>
