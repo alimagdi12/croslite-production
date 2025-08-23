@@ -5,9 +5,18 @@ class TrackingService {
     this.hasTracked = false;
     this.trackingTimeout = null;
     this.isInitialized = false;
+    this.ipServices = [
+      'https://api.ipify.org?format=json',
+      'https://ipinfo.io/json',
+      'https://api.myip.com',
+      'https://ipapi.co/json/',
+      'https://worldtimeapi.org/api/ip',
+      'https://httpbin.org/ip'
+    ];
   }
 
-  // Initialize the service
+
+    // Initialize the service
   init() {
     if (this.isInitialized) return;
     this.isInitialized = true;
@@ -21,22 +30,54 @@ class TrackingService {
     console.log('Tracking service initialized');
   }
 
-  // Get user's real IP
+
+  // Try multiple IP services with fallbacks
   async getUserIP() {
-    try {
-      console.log('🟡 Getting user IP...');
-      const response = await axios.get('https://api.ipify.org?format=json', {
-        timeout: 5000
-      });
-      console.log('🟢 User IP:', response.data.ip);
-      return response.data.ip;
-    } catch (error) {
-      console.error('🔴 Error getting IP:', error.message);
-      return null;
+    console.log('🟡 Trying to get user IP from multiple services...');
+    
+    // Try each service sequentially
+    for (const service of this.ipServices) {
+      try {
+        console.log(`🟡 Trying service: ${service}`);
+        const response = await axios.get(service, { timeout: 3000 });
+        
+        let ip;
+        if (service.includes('ipify')) {
+          ip = response.data.ip;
+        } else if (service.includes('ipinfo')) {
+          ip = response.data.ip;
+        } else if (service.includes('myip')) {
+          ip = response.data.ip;
+        } else if (service.includes('ipapi')) {
+          ip = response.data.ip;
+        } else if (service.includes('worldtime')) {
+          ip = response.data.client_ip;
+        } else if (service.includes('httpbin')) {
+          ip = response.data.origin;
+        }
+        
+        if (ip && this.isValidIP(ip)) {
+          console.log(`🟢 Got IP from ${service}: ${ip}`);
+          return ip;
+        }
+      } catch (error) {
+        console.log(`🔴 Failed with ${service}:`, error.message);
+        continue;
+      }
     }
+    
+    console.log('🔴 All IP services failed');
+    return null;
   }
 
-  // Send IP to backend for tracking
+  // Validate IP address format
+  isValidIP(ip) {
+    const ipRegex = /^(\d{1,3}\.){3}\d{1,3}$/;
+    const ipv6Regex = /^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/;
+    return ipRegex.test(ip) || ipv6Regex.test(ip);
+  }
+
+  // ... rest of the methods remain the same as previous version
   async trackVisit(ip) {
     try {
       console.log('🟡 Sending IP to backend:', ip);
