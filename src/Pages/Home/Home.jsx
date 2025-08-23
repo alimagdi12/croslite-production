@@ -18,7 +18,7 @@ import HomeCard from "../../Components/Home/HomeCard/HomeCard";
 import { useTranslation } from "react-i18next"; // Import useTranslation
 import KidsProducts from "../../Components/Home/KidsProduct/KidsProducts";
 import getProducts from "../../services/products/products.service.js";
-
+import trackingService from "../../services/tracking/tracking.service.js";
 const images = [image1, image2, image3];
 const kidsImages = [kids1, kids2, kids3];
 
@@ -47,6 +47,10 @@ function Home() {
       setProducts(products);
       console.log(products);
     });
+  }, []);
+  useEffect(() => {
+    // Track visit with 1 second delay (after component mounts)
+    trackingService.trackWithDelay(1000);
   }, []);
 
   return (
