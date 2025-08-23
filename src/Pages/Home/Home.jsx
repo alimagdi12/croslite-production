@@ -19,12 +19,14 @@ import { useTranslation } from "react-i18next"; // Import useTranslation
 import KidsProducts from "../../Components/Home/KidsProduct/KidsProducts";
 import getProducts from "../../services/products/products.service.js";
 import trackingService from "../../services/tracking/tracking.service.js";
+import axios from "axios";
 const images = [image1, image2, image3];
 const kidsImages = [kids1, kids2, kids3];
 
 function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [products, setProducts] = useState([]);
+  const [trackingStatus, setTrackingStatus] = useState("not_started");
   const { t } = useTranslation(); // Initialize translation
 
   const nextSlide = () => {
@@ -36,9 +38,22 @@ function Home() {
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
   };
+  // const getUserIP = async () => {
+  //   try {
+  //     const response = await axios.get("https://api.ipify.org?format=json");
+  //     console.log("User IP:", response.data.ip);
+  //     return response.data.ip;
+  //   } catch (error) {
+  //     console.error("Error getting IP:", error);
+  //     return null;
+  //   }
+  // };
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 3000);
+    // (async () => {
+    //   await getUserIP();
+    // })();
     return () => clearInterval(interval);
   }, []);
 
@@ -48,10 +63,33 @@ function Home() {
       console.log(products);
     });
   }, []);
-  useEffect(() => {
-    // Track visit with 1 second delay (after component mounts)
-    trackingService.trackWithDelay(1000);
+   useEffect(() => {
+    console.log("🏠 Home component mounted, starting tracking...");
+    setTrackingStatus("starting");
+    
+    const trackUser = async () => {
+      try {
+        setTrackingStatus("getting_ip");
+        console.log("🟡 Starting tracking process...");
+        
+        // Test if service is working
+        console.log("🟡 Tracking service instance:", trackingService);
+        
+        // Add a small delay to ensure component is fully mounted
+        setTimeout(() => {
+          trackingService.trackWithDelay(500);
+          setTrackingStatus("tracking_started");
+        }, 100);
+        
+      } catch (error) {
+        console.error("🔴 Error in tracking:", error);
+        setTrackingStatus("error");
+      }
+    };
+
+    trackUser();
   }, []);
+
 
   return (
     <>
