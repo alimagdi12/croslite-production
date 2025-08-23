@@ -151,11 +151,11 @@ function Home() {
 
       <div className="cartoon-container">
         <div className="cartoon-card">
-          <img src="/images/Cartoon/kids1.jpg" className="cartoon-img" />
+          <img src={image1} className="cartoon-img" />
           <div
             className="cartoon-card-content"
             style={{
-              backgroundColor: "#d1242a",
+              backgroundColor: "rgb(213 195 167)",
             }}
           >
             <h5>Spidey Coco Babuchi</h5>
@@ -163,15 +163,15 @@ function Home() {
           </div>
         </div>
         <div className="cartoon-card">
-          <img src={"/images/Cartoon/Kids2.jpg"} className="cartoon-img" />
+          <img src={image3} className="cartoon-img" />
           <div
             className="cartoon-card-content"
             style={{
-              backgroundColor: "#f58f20",
+              backgroundColor: "rgb(152 20 23)",
             }}
           >
             <h5>Batey Coco Babuchi</h5>
-            <p>20 %</p>
+            <p style={{color:"white"}}>20 %</p>
           </div>
         </div>
         <div className="cartoon-card">
@@ -187,7 +187,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <KidsProducts />
+      {/* <KidsProducts /> */}
     </>
   );
 }
