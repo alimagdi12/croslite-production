@@ -18,8 +18,7 @@ const ProductCard = ({ product }) => {
   const productName =
     i18n.language === "ar" ? product.arabicTitle : product.title;
 
-  function details(e) {
-    e.preventDefault();
+  function details() {
     navigate(`/product/${product._id}`);
   }
 
@@ -36,7 +35,6 @@ const ProductCard = ({ product }) => {
     <div className="products-card" onClick={details}>
       <ImageLoader src={product.imageUrl.images[0]} alt={productName} />
 
-      {/* Thumbnails Container */}
       <div className="product-thumbnails">
         {product.imageUrl.images.slice(1).map((image, index) => (
           <img
@@ -51,11 +49,24 @@ const ProductCard = ({ product }) => {
       <div className="product-details">
         <h3 className="product-name">{productName}</h3>
         <div className="button-container">
-          <button className="product-details-button" onClick={details}>
+          <button
+            className="product-details-button"
+            onClick={(e) => {
+              e.stopPropagation(); // prevent bubbling
+              details();
+            }}
+          >
             {t("Details")}
           </button>
+
           {isLoggedIn && (
-            <button className="add-to-cart-button" onClick={handleAddToCart}>
+            <button
+              className="add-to-cart-button"
+              onClick={(e) => {
+                e.stopPropagation(); // ✅ stop bubbling so only add-to-cart works
+                handleAddToCart();
+              }}
+            >
               {t("AddToCart")}
               <FontAwesomeIcon icon={faBagShopping} />
             </button>
