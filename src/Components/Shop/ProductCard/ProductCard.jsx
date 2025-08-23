@@ -33,7 +33,7 @@ const ProductCard = ({ product }) => {
   }
 
   return (
-    <div className="products-card">
+    <div className="products-card" onClick={details}>
       <ImageLoader src={product.imageUrl.images[0]} alt={productName} />
 
       {/* Thumbnails Container */}
