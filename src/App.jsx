@@ -14,6 +14,8 @@ import ProductDetails from "./Pages/ProductDetails/ProductDetails";
 import Cart from "./Pages/Cart/Cart";
 import Profile from "./Pages/Profile/Profile";
 import About from "./Pages/About/About";
+import { useEffect } from "react";
+import { connectSocket, disconnectSocket, getSocketStatus } from './services/Socket/socket.service';
 
 function Layout({ children }) {
   return (
@@ -26,6 +28,18 @@ function Layout({ children }) {
 }
 
 function App() {
+  useEffect(() => {
+    // Connect to socket when component mounts
+    connectSocket();
+    
+    // Optional: Check connection status
+    console.log('Socket status:', getSocketStatus());
+    
+    // Cleanup on component unmount
+    return () => {
+      disconnectSocket();
+    };
+  }, []);
   return (
     <LoginProvider>
       <BrowserRouter>
