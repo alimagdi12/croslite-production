@@ -6,8 +6,13 @@ let isConnected = false;
 export const connectSocket = () => {
   if (isConnected) return;
 
-  socket = io('https://api.croslite.com.eg:3001', {
-    transports: ['websocket', 'polling']
+  // Use the correct port for your environment
+  const socketUrl = 'https://api.croslite.com.eg:3002' 
+    
+
+  socket = io(socketUrl, {
+    transports: ['websocket', 'polling'],
+    withCredentials: true
   });
 
   socket.on('connect', () => {
@@ -20,7 +25,8 @@ export const connectSocket = () => {
       referrer: document.referrer,
       userAgent: navigator.userAgent,
       screen: `${window.screen.width}x${window.screen.height}`,
-      language: navigator.language
+      language: navigator.language,
+      ip: '' // Will be populated by server
     });
   });
 
@@ -29,23 +35,32 @@ export const connectSocket = () => {
     console.log('Disconnected from server');
   });
 
+  socket.on('connect_error', (error) => {
+    console.error('Connection error:', error);
+    isConnected = false;
+  });
+
   // Activity tracking - send heartbeat every 30 seconds
   setInterval(() => {
     if (isConnected) {
-      socket.emit('visitor-activity');
+      socket.emit('visitor-activity', {
+        page: window.location.pathname
+      });
     }
   }, 30000);
 
   // Track page changes
   let lastPathname = window.location.pathname;
-  setInterval(() => {
+  const observer = new MutationObserver(() => {
     if (window.location.pathname !== lastPathname && isConnected) {
       lastPathname = window.location.pathname;
       socket.emit('visitor-activity', {
         page: window.location.pathname
       });
     }
-  }, 1000);
+  });
+
+  observer.observe(document, { subtree: true, childList: true });
 };
 
 export const disconnectSocket = () => {
