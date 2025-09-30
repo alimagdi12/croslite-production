@@ -5,7 +5,7 @@ import removeFromCart from "../../services/RemoveFromCart/RemoveFromCart.js";
 import { toast } from "react-toastify";
 import Order from "../../services/Orders/Order"; // Import the Order service
 import "react-toastify/dist/ReactToastify.css";
-
+import CartSkeleton from "../../Components/CartSkeleton/CartSkeleton.jsx";
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -63,7 +63,7 @@ const Cart = () => {
   }
 
   // Loading and Error handling
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <CartSkeleton/>;
   if (error) return <div>{error}</div>;
 
   return (
