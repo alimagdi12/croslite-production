@@ -103,7 +103,7 @@ function Navbar() {
             className="close-icon"
             onClick={toggleSidebar}
           />
-          <ul className="sidebar-links">
+          <ul className="sidebar-links" dir="ltr">
             <li>
               <Link to="/">{t("Home")}</Link>
             </li>
@@ -133,7 +133,7 @@ function Navbar() {
               </li>
             )}
           </ul>
-          <div className="nav-icon">
+          <div className="nav-icon" dir="ltr">
             <FontAwesomeIcon icon={faSearch} />
             <Link to="/cart">
               <FontAwesomeIcon icon={faBagShopping} />

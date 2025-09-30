@@ -240,6 +240,10 @@ html[dir="rtl"] .slider-button {
     right: 0;
     top:-110px;
   }
+  html[dir="rtl"] .slider {
+    left: auto;
+    right: auto;
+  }
   .features-container {
     grid-template-columns: repeat(3, 1fr);
     padding: 30px;

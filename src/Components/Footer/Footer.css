@@ -162,9 +162,16 @@ footer hr {
     margin-bottom: 10px; /* Added space between input and button */
   }
 
+    html[dir="rtl"] .footer-input  {
+      border-radius: 50px !important;
+    }
+
   .footer-subscribe button {
     border-radius: 50px; /* Consistent radius */
     width: 100%;
+  }
+  html[dir="rtl"] .footer-subscribe button {
+    border-radius: 50px;
   }
 
   .footer-icons {
