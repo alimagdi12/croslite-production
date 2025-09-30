@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import "./Navbar.css";
 import { Link, Outlet } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,6 +33,16 @@ function Navbar() {
   const navigateToShop = () => {
     navigate("/shop");
   }
+
+  useEffect(() => {
+    if (i18n.language === "ar") {
+      document.documentElement.setAttribute("dir", "rtl");
+      document.documentElement.setAttribute("lang", "ar");
+    } else {
+      document.documentElement.setAttribute("dir", "ltr");
+      document.documentElement.setAttribute("lang", "en");
+    }
+  }, [i18n.language]);
 
   return (
     <>

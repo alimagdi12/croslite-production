@@ -13,6 +13,11 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+/* In RTL (Arabic) */
+html[dir="rtl"] .hero-section {
+  background-size: contain;
+}
+
 .slider {
   grid-column: 3;
   height: 100%;
@@ -21,6 +26,12 @@
   align-items: center;
   position: relative;
   right: 10%;
+}
+
+/* When Arabic (RTL) */
+html[dir="rtl"] .slider {
+  left: 10%;
+  right: auto; /* override */
 }
 
 .slider img {
@@ -55,6 +66,11 @@
   -o-border-radius: 50%;
   color: white;
 }
+
+html[dir="rtl"] .slider-button {
+  transform: rotate(180deg);
+}
+
 
 .slider-button:hover {
   background-color: rgba(255, 255, 255, 1);

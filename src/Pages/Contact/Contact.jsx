@@ -87,9 +87,9 @@ const Contact = () => {
 
             <div className="info-section">
               <h3>{t("Phone")}</h3>
-              <p>+20 120-571-222-1</p>
-              <p>+20 100-155-790-2</p>
-              <p>+20 66-375-930-0</p>
+              <p dir="ltr">+20 120-571-222-1</p>
+              <p dir="ltr">+20 100-155-790-2</p>
+              <p dir="ltr">+20 66-375-930-0</p>
             </div>
           </div>
         </div>

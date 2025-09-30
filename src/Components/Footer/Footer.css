@@ -37,6 +37,14 @@ footer {
   -o-border-radius: 50px 0 0 50px;
 }
 
+html[dir="rtl"] .footer-subscribe .footer-input {
+  border-radius: 0px 50px 50px 0px;
+  -webkit-border-radius: 0px 50 50 0px;
+  -moz-border-radius: 0px 50px 50px 0px;
+  -ms-border-radius: 0px 50px 50px 0px;
+  -o-border-radius: 0px 50px 50px 0px;
+}
+
 .footer-subscribe button {
   background-color: #94c11f;
   border: none;
@@ -45,6 +53,10 @@ footer {
   color: white;
   cursor: pointer;
   height: 50px;
+}
+
+html[dir="rtl"] .footer-subscribe button {
+  border-radius: 50px 0 0 50px;
 }
 
 .footer-icons {
